@@ -25,9 +25,9 @@
 
 
 
-import react from "react";
-import react from "react-dom"
+// import react from "react";
 
 
 
-export default addPosts;
+
+// export default addPosts;

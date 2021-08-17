@@ -1,5 +1,5 @@
-import react from "react";
-import react from "react-dom";
+import React from "react";
+
 
 const Header = () => {
     return (
