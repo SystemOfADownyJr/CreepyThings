@@ -1,12 +1,15 @@
 import React from 'react';
+import {Route} from 'react-router-dom'
 
+import {getUsers} from '../api';
 
 import Login from './Login';
 import Header from './Header';
-import addPosts from './AddPosts';
-import Posts from './Posts';
-import searchForm from './searchForm';
+// import addPosts from './AddPosts';
+// import Posts from './Posts';
 
+
+getUsers();
 
 const App = () => {
     return (
@@ -22,4 +25,6 @@ const App = () => {
     )
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+export default App

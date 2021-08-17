@@ -52,10 +52,10 @@
 
 
 
-export default searchForm;
+// export default searchForm;
 
-import React from "react";
-import React from "react-dom"
+// import React from "react";
 
 
-export default Posts;
+
+// export default Posts;
