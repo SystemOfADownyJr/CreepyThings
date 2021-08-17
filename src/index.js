@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
-const App = () => {
-    return (
-        <p>hi holt</p>
-    )
-};
+import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDom.render(<Router><App /></Router>, document.getElementById('root'));
