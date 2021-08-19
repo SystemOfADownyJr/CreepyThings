@@ -17,6 +17,7 @@ const App = () => {
                 <Header />
             <main>
                 <Route path="/" />
+                <Route path="/login"><Login /> </Route>
                 <newPostForm />
                 <postForm />
                 <searchForm />
