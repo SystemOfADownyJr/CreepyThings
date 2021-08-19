@@ -24,7 +24,9 @@
 
 // You should also provide feedback on the form if the user provides incorrect credentials, as well as if the user tries to provide bad usernames or passwords.
 
-import React from "react";
+import React, {useState} from "react";
+
+import {Link} from 'react-router-dom';
 
 
 const Login  = () => {
@@ -56,8 +58,8 @@ const Login  = () => {
 
     return (
         <div>
-            <Link to="/">Virtual Bartender</Link>
-            <form onSubmit={handleSubmit}>
+            <Link to="/">Stranger's Things</Link>
+            <form onSubmit={storeToken}>
                 <input type="text"
                         required
                         name="username"
