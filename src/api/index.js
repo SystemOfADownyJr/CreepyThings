@@ -10,7 +10,6 @@ export async function getUsers() {
       console.log(result);
     })
 }
-
 // export async function getPostsByUser(userId) {
 //   try {
 //     const { data } = await axios.get(`${ BASE }/users/${ userId }/posts`);

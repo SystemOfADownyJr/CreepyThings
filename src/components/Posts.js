@@ -12,7 +12,14 @@
 
 
 
-
+fetch('https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer TOKEN_STRING_HERE'
+  },
+//   body: JSON.stringify({})
+// })
 
 
 // _____________________
@@ -58,4 +65,4 @@
 
 
 
-// export default Posts;
+})
