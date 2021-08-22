@@ -5,6 +5,7 @@ import {getUsers} from '../api';
 
 import Login from './Login';
 import Header from './Header';
+import Register from './Register';
 // import addPosts from './AddPosts';
 // import Posts from './Posts';
 import Messages from './messagesForm';
@@ -28,11 +29,16 @@ const App = () => {
             <main>
                 <Route path="/" />
                 <Route path="/login"><Login /> </Route>
+<<<<<<< HEAD
                 <newPostForm />
                 <postForm />
                 <Route path="/messages"><Messages /> </Route>
                 <searchForm />
             </main>
+=======
+                <Route path="/register"><Register /> </Route>
+           </main>
+>>>>>>> bryon-branch
         </>
     )
 };
