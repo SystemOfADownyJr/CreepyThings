@@ -5,6 +5,7 @@ import {getUsers} from '../api';
 
 import Login from './Login';
 import Header from './Header';
+import Register from './Register';
 // import addPosts from './AddPosts';
 // import Posts from './Posts';
 
@@ -18,10 +19,8 @@ const App = () => {
             <main>
                 <Route path="/" />
                 <Route path="/login"><Login /> </Route>
-                <newPostForm />
-                <postForm />
-                <searchForm />
-            </main>
+                <Route path="/register"><Register /> </Route>
+           </main>
         </>
     )
 };
