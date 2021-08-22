@@ -11,6 +11,18 @@ export async function getUsers() {
     })
 }
 
+export const handleDelete = async (postIdToDelete) => {
+  const response = await fetch(`https://strangers-things.herokuapp.com/posts/${postIdToDelete}`, {
+      method: 'DELETE'
+  })
+  const data = await response.json()
+  console.log('data: ', data)
+  if (data) {
+      const newPosts = posts.filter(post => post.id !== postIdToDelete)
+      setPosts(newPosts)
+  }
+}
+
 // export async function getPostsByUser(userId) {
 //   try {
 //     const { data } = await axios.get(`${ BASE }/users/${ userId }/posts`);
