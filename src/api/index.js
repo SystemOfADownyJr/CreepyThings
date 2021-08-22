@@ -10,20 +10,3 @@ export async function getUsers() {
       console.log(result);
     })
 }
-// export async function getPostsByUser(userId) {
-//   try {
-//     const { data } = await axios.get(`${ BASE }/users/${ userId }/posts`);
-//     return data;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
-
-// export async function getTodosByUser(userId) {
-//   try {
-//     const { data } = await axios.get(`${ BASE }/users/${ userId }/todos`);
-//     return data;
-//   } catch (error) {
-//     throw error;
-//   }
-// }

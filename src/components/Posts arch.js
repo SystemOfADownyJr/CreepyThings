@@ -1,40 +1,27 @@
 // import { description } from 'commander';
 // import { CreateDataProperty } from 'es-abstract';
-import React, { useEffect, useState } from 'react';
-import Post from './Post'
+import React, { useEffect } from 'react';
+import ReactDOM from 'react';
+import API from '../utilities/api';
 
 function Posts(props) {
-  const postList = useState([]);
-
   async function getPosts() {
-    const response = await fetch('https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/posts', {
-      method,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(data)
-    });
+    const response = await fetch('https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/posts', 'GET');
     const responseData = await response.json();
     return responseData;
   }
-
   useEffect(async function() {
     try {
+      console.log('here')
       const data = await getPosts();
-      postList(data);
-      // console.log(postList);
   } catch(error) {
       console.error(error);
     }
   }, []);
   
-  console.log(postList)
-  var post;
-  // console.log(postList.map((post, i) => post))
-  // for (let i = 0; i < postList.length; i++) {
-  //   console.log(postList[i]);
-  // }
-  const postElements = postList.map((post, i) => <Post title={post.title}
+  // const results = await getPosts();
+  console.log(data)
+  const postElements = data.map((post, i) => <Post title={post.title}
                                                       description={post.description}
                                                       price={post.price}
                                                       createdAt={post.createdAt}
@@ -42,9 +29,7 @@ function Posts(props) {
                                                       location={post.location}
                                                       willDeliver={post.willDeliver}
                                                       messages={post.messages}
-                                                      // author={post.author.username}
-                                                      // key={post.id}
-                                                      />);
+                                                      author={post.author.username} />);
 
   
   
