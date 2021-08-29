@@ -29,16 +29,16 @@ import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 
 
-const Login  = () => {
+const Register  = () => {
 
-    const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT";
+    const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/";
 
-    const [user, setUser] = useState ('');
-    const [password, setPassword] = useState ('');
+    const [registerUser, setRegisterUser] = useState ('');
+    const [registerPassword, setRegisterPassword] = useState ('');
 
-    async function storeToken(event) {
+    async function registerToken(event) {
         event.preventDefault();
-        console.log (user, password);
+        console.log (registerUser, setRegisterPassword);
         try {
             const response = await fetch(`${BASE_URL}/users/register`, {
                 method: 'POST', 
@@ -47,8 +47,8 @@ const Login  = () => {
                 },
                   body: JSON.stringify({
                          user: {
-                            username: user,
-                            password: password
+                            username: registerUser,
+                            password: registerPassword
       }
 
         })
@@ -64,23 +64,20 @@ const Login  = () => {
     return (
         <div>
             <Link to="/">Stranger's Things</Link>
-            <form onSubmit={storeToken}>
+            <form onSubmit={registerToken}>
                 <input type="text"
-                        value={user}
-                        onChange={(event)=> setUser(event.target.value)}
+                        value={registerUser}
+                        onChange={(event)=> setRegisterUser(event.target.value)}
                         placeholder="username" />    
                 <input type="password"
-                        value={password}
-                        onChange={(event)=> setPassword(event.target.value)}
+                        value={registerPassword}
+                        onChange={(event)=> setRegisterPassword(event.target.value)}
                         placeholder="password"></input>
-                <button>Submit</button>
+                <button>Register</button>
             </form>
         </div>
     )
 }
 
 
-
-
-
-export default Login;
+export default Register;
