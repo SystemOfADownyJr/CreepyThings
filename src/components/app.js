@@ -7,44 +7,25 @@ import Login from './Login';
 import Header from './Header';
 import Register from './Register';
 // import addPosts from './AddPosts';
-// import Posts from './Posts';
-// import Messages from './messagesForm';
-import TokenUtilities from '../utilities/token';
-// import SearchForm from './searchForm';
-import Posts from './Posts'
+import Post from './Post';
 
 
 getUsers();
 
 const App = () => {
-
-    const [token, setToken] = useState(TokenUtilities.getToken())
-    const [isLoggedIn, setIsLoggedIn] = useState(!!token)
-    //not sure where to define these
-
-    useEffect(function() {
-        setIsLoggedIn(!!token)
-    }, [token])
-
     return (
         <>
-                <Header isLoggedIn={isLoggedIn} setToken={setToken} />
+                <Header />
             <main>
-                {/* <Switch>
-                    <Route path="/" />
-                    <Route path="/login"><Login /></Route>
-                    <Route path="/Posts"><Posts /></Route>
-                </Switch> */}
-                <Posts />
-                {/* <newPostForm />
-                <postForm /> */}
-                {/* <Route path="/messages"><Messages /> </Route> */}
-                {/* <SearchForm /> */}
-            </main>
+                <Route path="/" />
+                <Route path="/login"><Login /> </Route>
+                <Route path="/register"><Register /> </Route>
+                <Route path="/post"><Post /> </Route>
+           </main>
         </>
     )
 };
 
 
 
-export default App
+export default App;
