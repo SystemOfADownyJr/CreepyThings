@@ -1,5 +1,5 @@
-import React from 'react';
-import {Route} from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import {Route, Switch} from 'react-router-dom'
 
 import {getUsers} from '../api';
 
@@ -8,7 +8,10 @@ import Header from './Header';
 import Register from './Register';
 // import addPosts from './AddPosts';
 // import Posts from './Posts';
-import Messages from './messagesForm';
+// import Messages from './messagesForm';
+import TokenUtilities from '../utilities/token';
+// import SearchForm from './searchForm';
+import Posts from './Posts'
 
 
 getUsers();
@@ -27,18 +30,17 @@ const App = () => {
         <>
                 <Header isLoggedIn={isLoggedIn} setToken={setToken} />
             <main>
-                <Route path="/" />
-                <Route path="/login"><Login /> </Route>
-<<<<<<< HEAD
-                <newPostForm />
-                <postForm />
-                <Route path="/messages"><Messages /> </Route>
-                <searchForm />
+                {/* <Switch>
+                    <Route path="/" />
+                    <Route path="/login"><Login /></Route>
+                    <Route path="/Posts"><Posts /></Route>
+                </Switch> */}
+                <Posts />
+                {/* <newPostForm />
+                <postForm /> */}
+                {/* <Route path="/messages"><Messages /> </Route> */}
+                {/* <SearchForm /> */}
             </main>
-=======
-                <Route path="/register"><Register /> </Route>
-           </main>
->>>>>>> bryon-branch
         </>
     )
 };

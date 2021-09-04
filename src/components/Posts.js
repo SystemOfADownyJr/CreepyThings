@@ -1,22 +1,34 @@
 // import { description } from 'commander';
 // import { CreateDataProperty } from 'es-abstract';
 import React, { useEffect, useState } from 'react';
-import Post from './Post'
+import ReactDOM from 'react-dom';
+import Post from './Post';
+import Index from '../index';
 
 function Posts(props) {
   const postList = useState([]);
+  const BASE = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/'
 
   async function getPosts() {
-    const response = await fetch('https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/posts', {
-      method,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(data)
-    });
-    const responseData = await response.json();
-    return responseData;
-  }
+    fetch(`${BASE}posts`)
+    .then(response => response.json())
+    .then(result => {
+      return result;
+    })
+}
+
+
+  // async function getPosts() {
+  //   const response = await fetch('https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/posts', {
+  //     method,
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     // body: JSON.stringify(data)
+  //   });
+  //   const responseData = await response.json();
+  //   return responseData;
+  // }
 
   useEffect(async function() {
     try {
@@ -24,11 +36,12 @@ function Posts(props) {
       postList(data);
       // console.log(postList);
   } catch(error) {
-      console.error(error);
+      console.error("error " + error);
     }
   }, []);
   
-  console.log(postList)
+  console.log(postList);
+  console.log("where am, i")
   var post;
   // console.log(postList.map((post, i) => post))
   // for (let i = 0; i < postList.length; i++) {
@@ -45,6 +58,8 @@ function Posts(props) {
                                                       // author={post.author.username}
                                                       // key={post.id}
                                                       />);
+
+                                          
 
   
   

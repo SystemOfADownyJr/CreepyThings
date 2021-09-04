@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import BASE from './api';
+import BASE from '../api';
 
 import { userHistory } from 'react-router-dom';
 // do i need to import something else?
