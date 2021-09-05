@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 
-import {getUsers} from '../api';
+import {getUsers} from '../api/index';
 
 import Login from './Login';
 import Header from './Header';
 import Register from './Register';
-// import addPosts from './AddPosts';
 import Post from './Post';
-
+import Posts from './Posts';
+import Messages from './messagesForm';
 
 getUsers();
 
@@ -21,6 +21,8 @@ const App = () => {
                 <Route path="/login"><Login /> </Route>
                 <Route path="/register"><Register /> </Route>
                 <Route path="/post"><Post /> </Route>
+                <Route path="/posts"><Posts /> </Route>
+                <Route path="/messagesForm"><Messages /> </Route>
            </main>
         </>
     )
