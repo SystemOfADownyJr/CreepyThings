@@ -8,7 +8,7 @@ import Header from './Header';
 import Register from './Register';
 import Post from './Post';
 import Posts from './Posts';
-import Messages from './messagesForm';
+import AddMessage from './AddMessage';
 
 getUsers();
 
@@ -22,7 +22,7 @@ const App = () => {
                 <Route path="/register"><Register /> </Route>
                 <Route path="/post"><Post /> </Route>
                 <Route path="/posts"><Posts /> </Route>
-                <Route path="/messagesForm"><Messages /> </Route>
+                <Route path="/messagesForm"><AddMessage /> </Route>
            </main>
         </>
     )
