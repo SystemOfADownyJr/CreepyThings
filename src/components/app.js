@@ -9,6 +9,7 @@ import Register from './Register';
 import Post from './Post';
 import Posts from './Posts';
 import AddMessage from './AddMessage';
+import Profile from './profile';
 
 getUsers();
 
@@ -23,6 +24,7 @@ const App = () => {
                 <Route path="/post"><Post /> </Route>
                 <Route path="/posts"><Posts /> </Route>
                 <Route path="/messagesForm"><AddMessage /> </Route>
+                <Route path="/profile"> <Profile /> </Route>
            </main>
         </>
     )

@@ -55,7 +55,7 @@ const Login  = () => {
             }); 
             const data = await response.json();
             console.log(data);
-            localStorage.setItem('vb-token', data.token);
+            localStorage.setItem('vb-token', data.data.token);
         } catch (error) {
             console.log (error);
         }
