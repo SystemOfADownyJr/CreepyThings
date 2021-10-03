@@ -8,11 +8,13 @@ import Messages from "./messagesForm";
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
+    const [messageState, setMessageState] = useState([]);
     useEffect(async function() {
         try {
             const data = await makeRequest('users/me', 'GET');
             console.log(data.data.messages);
             setProfile(data.data.messages);
+            setMessageState(data.data.messages);
         } catch (error) {
             console.error(error);
         }
@@ -39,13 +41,21 @@ const Profile = () => {
        console.log(responseData);
        return responseData;
     }
+
+    const msgArray = messageState.map((msg)=>
+    <div key={`post-id${msg._id}`}>
+        <p>{msg.title}</p>
+        <p>Username : {msg.fromUser.username}</p>
+        <p>From_Post : {msg.post.title}</p>
+        <p>Message : {msg.content}</p>
+    </div>)
     return (
         <div>
             <h1>Profile</h1>
-                {<p>{ profile!= null ? profile.messages: ''}</p>}
+                {msgArray}
         </div>
-     )
-     makeRequest();
+    )
+    makeRequest();
 }
 const BASE_URL = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/';
 
