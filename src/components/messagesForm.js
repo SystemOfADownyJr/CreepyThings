@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 
-// import BASE from '../api';
-
-import { userHistory } from 'react-router-dom';
-// do i need to import something else?
+import { useHistory } from 'react-router-dom';
+//do i need to import something else?
 
 //how to recover from post element
+
+const BASE = "https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/";
 
 const Messages = () => {
 
   const [message, setMessages] = useState({messages: ''})
-  // let history = useHistory()
+  let history = useHistory()
 
   function updateMessage(e) {
     const newState = {...message}
@@ -21,8 +21,8 @@ const Messages = () => {
 
   async function onSend(e) {
     e.preventDefault()
-    // await BASE.makeRequest('/', 'POST', message)
-    // history.push('.message')
+    await BASE.makeRequest('/', 'POST', message)
+    history.push('.message')
   }
 
   return (

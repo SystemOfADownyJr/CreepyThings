@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import Post from './Post';
 import Index from '../index';
@@ -6,8 +6,7 @@ import Messages from './messagesForm'
 
 function Posts(props) {
   const [postList, setPostList] = useState([]);
-  const BASE = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/'
-
+    
   const getToken = () => {
     const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/";
 
@@ -42,8 +41,8 @@ function Posts(props) {
 
   useEffect(async function() {
     try {
-      // postsToken()
-      const response = await fetch(`${BASE}/posts`)
+      postsToken()
+      const response = await fetch(`${BASE_URL}/posts`)
       const data = await response.json();
       setPostList(data.data.posts);
   } catch(error) {

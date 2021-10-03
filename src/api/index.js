@@ -1,30 +1,33 @@
-// import axios from 'axios';
+import React from 'react'
 
-const BASE = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/'
+import axios from 'axios';
+
+const BASE_URL = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT/'
 
 export async function getUsers() {
 
-    fetch(`${BASE}posts`)
+    fetch(`${BASE_URL}posts`)
     .then(response => response.json())
     .then(result => {
       return result;
     })
 }
 
-// export async function getPostsByUser(userId) {
-//   try {
-//     const { data } = await axios.get(`${ BASE }/users/${ userId }/posts`);
-//     return data;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+export async function getPostsByUser(userId) {
+  try {
+    const {data} = await axios.get(`${BASE_URL}/users/${userId}/posts`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
 
-// export async function getTodosByUser(userId) {
-//   try {
-//     const { data } = await axios.get(`${ BASE }/users/${ userId }/todos`);
-//     return data;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+export async function getTodosByUser(userId) {
+  try {
+    const {data} = await axios.get(`${BASE_URL}/users/${userId}/todos`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+

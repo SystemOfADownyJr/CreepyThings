@@ -27,7 +27,7 @@ const AddMessage = () => {
 
     async function onSubmit(e) {
         e.preventDefault();
-        await API.makeRequest('/', 'POST', messageText);
+        await makeRequest('/', 'POST', messageText);
         history.push('./addMessage')
     }
 

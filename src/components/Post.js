@@ -87,7 +87,7 @@ const Post = () => {
         }
     },[]);
 
-const postElement=newPost.map((element, i)=>
+const postElement = newPost.map((element, i)=>
     <div key={`post-id${i}`}>
         <p>{element.title}</p>
         <p>Price : {element.price}</p>
